@@ -11,7 +11,7 @@ function handleUserResponse (response) {
  var lowerResponse =response.toLowerCase();
 //Validate the user's choice and tell them if they made a mistake
  if((lowerResponse)==="rock"||(lowerResponse)==="paper"||(lowerResponse)==="scissors") {
-    console.log(response);
+    console.log(Math.floor(Math.random()*3.33));
  }
     else {console.log("OI! check you didn't make a typo-only 'rock', 'paper' or 'scissors; allowed!");
     }
