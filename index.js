@@ -9,17 +9,25 @@ const readline = require("readline").createInterface({
 function handleUserResponse (response) {
 //make all capitals or strip capatlisation
  var lowerResponse =response.toLowerCase();
-//Validate the user's choice and tell them if they made a mistake
- if((lowerResponse)==="rock"||(lowerResponse)==="paper"||(lowerResponse)==="scissors") {
-    console.log(Math.floor(Math.random()*3.33));
- }
-    else {console.log("OI! check you didn't make a typo-only 'rock', 'paper' or 'scissors; allowed!");
+//If the user made a correct response a random number is generated,
+     if((lowerResponse)==="rock"||(lowerResponse)==="paper"||(lowerResponse)==="scissors") {
+    responseNumber = Math.floor(Math.random()*3.33);
+     }
+//the computer prints what the computers random choice was, rock/paper ot scissors.
+    if((responseNumber===0)&&(lowerResponse==="rock")) {
+        console.log("'rock' draw try again");
     }
- 
- 
- 
-  //Computer to make random selection
-  //Random choice of rock paper scissors
+    else if(responseNumber===1) {
+        console.log("paper");
+    }
+    else if(responseNumber===2) {
+        console.log("scissors");
+    }
+ //Tells the user to correct their typo
+    else {
+        console.log("OI! check you didn't make a typo-only 'rock', 'paper' or 'scissors; allowed!");
+    }
+
 //Compare the two choices
 //Report on who won - this will be to console log who won
 // where you see that \n it means NEW LINE that is to stop the anser being squisged up to the question in the console
