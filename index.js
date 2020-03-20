@@ -7,31 +7,46 @@ const readline = require("readline").createInterface({
 });
 
 function handleUserResponse (response) {
-//make all capitals or strip capatlisation
+//Make all capitals or strip capatlisation
  var lowerResponse =response.toLowerCase();
 //If the user made a correct response a random number is generated,
-     if((lowerResponse)==="rock"||(lowerResponse)==="paper"||(lowerResponse)==="scissors") {
+if((lowerResponse)==="rock"||(lowerResponse)==="paper"||(lowerResponse)==="scissors") {
     responseNumber = Math.floor(Math.random()*3.33);
      }
-//the computer prints what the computers random choice was, rock/paper ot scissors.
+     else {
+        console.log("typo");
+    }
+//The computer compares the two choices and prints what the computer's random choice was, rock/paper or scissors.
+//Reports on who won - this will be to console log who won
     if((responseNumber===0)&&(lowerResponse==="rock")) {
-        console.log("'rock' draw try again");
+        console.log("'ROCK' draw try again");
     }
-    else if(responseNumber===1) {
-        console.log("paper");
+    else if((responseNumber===0)&&(lowerResponse==="paper")) {
+        console.log("ROCK! you win.");
     }
-    else if(responseNumber===2) {
-        console.log("scissors");
+    else if((responseNumber===0)&&(lowerResponse==="scissors")) {
+        console.log("ROCK! in your face loser.");
     }
- //Tells the user to correct their typo
-    else {
-        console.log("OI! check you didn't make a typo-only 'rock', 'paper' or 'scissors; allowed!");
+    else if((responseNumber===1)&&(lowerResponse==="paper")) {
+        console.log("'PAPER' draw try again");
     }
-
-//Compare the two choices
-//Report on who won - this will be to console log who won
+    else if((responseNumber===1)&&(lowerResponse==="rock")) {
+        console.log("PAPER! in your face loser.");
+    }
+    else if((responseNumber===1)&&(lowerResponse==="scissors")) {
+        console.log("PAPER! you win.");
+    }
+    else if((responseNumber===2)&&(lowerResponse==="scissors")) {
+        console.log("'SCISSORS' draw try again");
+    }
+    else if((responseNumber===2)&&(lowerResponse==="rock")) {
+        console.log("SCISSORS! you win.");
+    }
+    else if((responseNumber===2)&&(lowerResponse==="paper")) {
+        console.log("SCISSORS! in your face loser.");
+    }
+    
 // where you see that \n it means NEW LINE that is to stop the anser being squisged up to the question in the console
-
 //readline.close closes the program 
 readline.close();
 }
